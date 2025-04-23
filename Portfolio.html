@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rodrigo Genavia - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+
+        .trail {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #0a70bacc;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: opacity 0.5s ease-out;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on("mousemove", function(e) {
+                let trail = $("<div class='trail'></div>");
+                $("body").append(trail);
+                trail.css({ left: e.pageX, top: e.pageY });
+
+                // Fade out and remove after a short delay
+                setTimeout(() => {
+                    trail.css("opacity", "0");
+                    setTimeout(() => trail.remove(), 500);
+                }, 100);
+            });
+        });
+        AOS.init();
+
+    </script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!--<a class="navbar-brand" href="#">My Portfolio</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#experiences">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#companies">Previous Work</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5"  data-aos="fade-up">
+        <img src="images/profile.jpg" alt="Profile Picture" class="rounded-circle" width="200" height="220">
+        <h1>Hi, I'm Rodrigo</h1>
+        <p>Web Developer | Software Engineer | Tech Enthusiast</p>
+        <a href="https://www.linkedin.com/in/rodrigo-genavia-209a8514a/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/linkedin.svg" alt="LinkedIn" width="40" style="filter: invert(1);">
+        </a>
+    
+    </header>
+
+    <!-- Experience Section -->
+    <section id="experiences" class="container py-5">
+        <h2 class="text-center mb-4"  data-aos="fade-up">Experiences</h2>
+        <div class=" card p-3">
+            <div class="row">
+                <div class="col-md-6"  data-aos="zoom-in">
+                    <h4>Application Developer - ACTIVANTS PTE. LTD</h4>
+                    <div class="card mb-1 p-2">
+                        <p><strong>Client: Agency for Integrated Care (AIC)</strong></p>
+                        <p>January 2023 - October 2023</p>
+                        <p><strong>Project: Central Payment Gateway (CPG) System</strong></p>
+                        <ul>
+                            <li>Developed role segregation module for user group management.</li>
+                            <li>Implemented ASF Claim Payment Ingestion process via SFTP.</li>
+                            <li>Enhanced scheme lookup creation and updates with action log tracking.</li>
+                            <li>Managed payment details lookup template uploading/downloading.</li>
+                            <li>Provided user-reported issue support and resolution.</li>
+                        </ul>
+                    </div>
+                    <div class="card  p-2">
+                        <p><strong>Client: Infocomm Media Development Authority (IMDA)</strong></p>
+                        <p>July 2022 - January 2023</p>
+                        <p><strong>Project: Online Grant Management System (OGMS)</strong></p>
+                        <ul>
+                            <li>Converted legacy low-code system to C#, VB.Net & ASP.Net.</li>
+                            <li>Developed existing modules into .NET Framework-based web application.</li>
+                            <li>Created Web Services (APIs) for frontend integration.</li>
+                            <li>Managed SQL database structure and optimizations.</li>
+                        </ul>
+
+                        <p><strong>Project: SME’s Go Digital Pre-Approval System (SGDPAS)</strong></p>
+                        <ul>
+                            <li>Assisted in resolving technical issues for development team.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6"  data-aos="zoom-in">
+                    <h4>Application Developer - GEODATA PHILIPPINES INC.</h4>
+                    <div class="card  p-2">
+                    <p><strong>Client: Department of Building Officials – Quezon City Hall</strong></p>
+                    <p>January 2019 - December 2022</p>
+                    
+                    <p><strong>Project: Building Registration One Stop Shop (BROSS)</strong></p>
+                    <ul>
+                        <li>Developed and maintained the CPDO Zoning system.</li>
+                        <li>Implemented Zoning Evaluation and Locational Clearance auto-numbering.</li>
+                        <li>Created Billing Assessment and Web API integrations for Treasury Department.</li>
+                        <li>Designed PDF generation for form printing using Crystal Reports.</li>
+                    </ul>
+                    <p><strong> Permit Tracking System (PTRAX)</strong></p>
+                    <ul>
+                        <li>Performed system modifications and maintenance.</li>
+                        <li>Integrated tracking functionality for Building Permit approvals.</li>
+                    </ul>
+                    <p><strong>TEXTBLAST</strong> </p>
+                    <ul>
+                        <li>Enhanced text notification system for permit application updates.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+
+    <!-- Education Section -->
+    <section id="education" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4"  data-aos="fade-up">Education</h2>
+            <div class="card p-3">
+            <div class="row">
+                <div class="col-md-12"  data-aos="zoom-in">
+                    <h4>Bachelor of Science in Information Technology - Major in Programming</h4>
+                    <p>Quezon City Polytechnic University (2013-2018)</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section id="skills" class="container py-5">
+        <h2 class="text-center mb-4"  data-aos="fade-up">Skills</h2>
+        <div class="card p-3">
+        <div class="row p"  data-aos="zoom-in">
+            <div class="col-md-4"><p>✅ HTML5</p></div>
+            <div class="col-md-4"><p>✅ MVC</p></div>
+            <div class="col-md-4"><p>✅ CSS3 (Bootstrap & Materialize)</p></div>
+            <div class="col-md-4"><p>✅ JavaScript (jQuery, AJAX & JSON)</p></div>
+            <div class="col-md-4"><p>✅ SAP Crystal Reports</p></div>
+            <div class="col-md-4"><p>✅ Bitbucket & Azure</p></div>
+            <div class="col-md-4"><p>✅ Web Services – Web Core API</p></div>
+            <div class="col-md-4"><p>✅ Internet Information Services (IIS)</p></div>
+            <div class="col-md-4"><p>✅ C#</p></div>
+            <div class="col-md-4"><p>✅ VB.Net</p></div>
+            <div class="col-md-4"><p>✅ ASP.Net</p></div>
+            <div class="col-md-4"><p>✅ Low Code Platforms (Decisions & Kofax Total Agility)</p></div>
+            <div class="col-md-4"><p>✅ Razor</p></div>
+            <div class="col-md-4"><p>✅ Entity Framework</p></div>
+            <div class="col-md-4"><p>✅ .Net Framework</p></div>
+            <div class="col-md-4"><p>✅ MS SQL – Stored Procedures, Functions, Replications</p></div>
+        </div>
+    </div>
+    </section>
+     <!--Certificate Section-->
+    <section id="certificates" class="container mt-5">
+        <h2 class="text-center" data-aos="fade-up">Certificates</h2>
+        <div class="row">
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Build ASP.NET Core Web API - Scratch To Finish (.NET8 API)</h5>
+                        <p class="card-text">Issued by Udemy | 2025</p>
+                        <p class="card-text">Certificate No: UC-0f3e989c-83c6-441b-8818-a6a0914b26b8</p>
+                        <a href="https://www.udemy.com/certificate/UC-0f3e989c-83c6-441b-88d8-a6a0914b26b8/" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Software Engineer Certificate</h5>
+                        <p class="card-text">Issued by HackerRank | 2025</p>
+                        <p class="card-text">Certificate No: 9f4c6069f4fa</p>
+                        <a href="https://www.hackerrank.com/certificates/iframe/9f4c6069f4fa" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">C# Basic Certificate</h5>
+                        <p class="card-text">Issued by HackerRank | 2025</p>
+                        <p class="card-text">Certificate No: f611a9921b69</p>
+                        <a href="https://www.hackerrank.com/certificates/iframe/f611a9921b69" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL Basic Certificate</h5>
+                        <p class="card-text">Issued by HackerRank | 2025</p>
+                        <p class="card-text">Certificate No: b7ea909d1d4</p>
+                        <a href="https://www.hackerrank.com/certificates/iframe/b7ea909d1d4" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL Intermediate Certificate</h5>
+                        <p class="card-text">Issued by HackerRank | 2025</p>
+                        <p class="card-text">Certificate No: 58cbdc46589a</p>
+                        <a href="https://www.hackerrank.com/certificates/iframe/58cbdc46589a" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CSS Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-EENRH20U</p>
+                        <a href="https://www.sololearn.com/certificates/CT-EENRH20U" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">C# Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-HOU4R0LZ</p>
+                        <a href="https://www.sololearn.com/certificates/CT-HOU4R0LZ" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Responsive Web Design Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2021</p>
+                        <p class="card-text">Certificate No: CT-QRT6INZU</p>
+                        <a href="https://www.sololearn.com/certificates/CT-QRT6INZU" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-VY9MNCCH</p>
+                        <a href="https://www.sololearn.com/certificates/CT-VY9MNCCH" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-BRNBB82J</p>
+                        <a href="https://www.sololearn.com/certificates/CT-BRNBB82J" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kotlin Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2021</p>
+                        <p class="card-text">Certificate No: CT-VEZNZEJG</p>
+                        <a href="https://www.sololearn.com/certificates/CT-VEZNZEJG" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">jQuery Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-YH7TZYC6</p>
+                        <a href="https://www.sololearn.com/certificates/CT-YH7TZYC6" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-MWQJNDH3</p>
+                        <a href="https://www.sololearn.com/certificates/CT-MWQJNDH3" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PHP Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2017</p>
+                        <p class="card-text">Certificate No: CT-OINMMIGM</p>
+                        <a href="https://www.sololearn.com/certificates/CT-OINMMIGM" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript Certificate</h5>
+                        <p class="card-text">Issued by Sololearn | 2016</p>
+                        <p class="card-text">Certificate No: CT-QUVHBJYX</p>
+                        <a href="https://www.sololearn.com/certificates/CT-QUVHBJYX" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Certificate Section-->
+    <!-- Work Section -->
+    <section id="companies" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4"  data-aos="fade-up">Companies I worked with</h2>
+            <div class="row">
+                <div class="col-md-4"  data-aos="zoom-in">
+                    <div class="card p-3">
+                       <a href="https://activants.com/" target="_blank"> <img src="images/activants.png" class="card-img-top" alt="Project 1">
+                        </a>
+                       
+                    </div>
+                </div>
+                <div class="col-md-4"  data-aos="zoom-in">
+                    <div class="card p-3">
+                        <a href="https://www.aic.sg/" target="_blank"> <img src="images/AIC.png" class="card-img-top" alt="Project 1">
+                        </a>
+                      
+                       
+                    </div>
+                </div>
+                <div class="col-md-4"  data-aos="zoom-in">
+                    <div class="card p-3">
+                        <a href="https://www.imda.gov.sg/" target="_blank"> <img src="images/IMDA.png" class="card-img-top" alt="Project 1">
+                        </a>
+                     
+                       
+                    </div>
+                </div>
+                <div class="col-md-4"  data-aos="zoom-in">
+                    <div class="card p-3">
+                        <a href="https://geosolutions.com.ph/" target="_blank"> <img src="images/geodata.jpeg" class="card-img-top" alt="Project 1">
+                        </a>
+                      
+                       
+                    </div>
+                </div>
+                <div class="col-md-4"  data-aos="zoom-in">
+                    <div class="card p-3">
+                        <a href="https://quezoncity.gov.ph/departments/department-of-the-building-official/" target="_blank"> <img src="images/DBO.jpg" class="card-img-top" alt="Project 1">
+                        </a>
+                       
+                    </div>
+                </div>
+                <!-- Add more Work -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>Email me at: <a href="mailto:genaviarodrigo@gmail.com" class="text-light">genaviarodrigo@gmail.com</a></p>
+        <p>Contact me at: +639475849929 (Smart) / +639270365308 (Globe)</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
